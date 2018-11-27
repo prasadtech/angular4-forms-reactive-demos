@@ -1,0 +1,15 @@
+-- MUDAR O PRE-PROCESSADOR DEFAULT STYLE
+ng set defaults.styleExt scss   
+
+*-------------------------------------------------------------*
+
+https://github.com/alexjoverm/angular-bulma
+
+npm install bulma --save
+
+
+--> STYLES.SCSS
+
+$primary: #72d0eb;
+
+@import "~bulma";

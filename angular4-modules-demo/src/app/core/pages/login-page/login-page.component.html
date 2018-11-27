@@ -1,0 +1,65 @@
+<section class="hero is-fullheight is-dark is-bold">
+
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-4 is-offset-4">
+            <h1 class="title">
+              Login
+            </h1>
+
+            <form #form="ngForm" (ngSubmit)="actionLogin()">
+              <div class="box">
+                <label class="label">Email</label>
+                <p class="control">
+                  <input class="input" 
+                         type="email" 
+                         placeholder="test@example.org"
+                         [(ngModel)]="email"
+                         [ngModelOptions]="{standalone: true}"
+                         required
+                         >
+                </p>
+                <label class="label">Password</label>
+                <p class="control">
+                  <input class="input" 
+                         type="password" 
+                         placeholder="●●●●●●●"
+                          [(ngModel)]="password"
+                          [ngModelOptions]="{standalone: true}"
+                         required
+                         autofocus
+                         >
+                </p>
+                <hr>
+                <p class="control">
+                  <button class="button is-primary"
+                          [disabled]="form.invalid"
+                          >
+                          Login
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <div class="modal is-warning" [ngClass]="{'is-active': modalMessage}">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head is-">
+          <p class="modal-card-title">Warning</p>
+          <button class="delete" (click)="actionCloseModal()"></button>
+        </header>
+        <section class="modal-card-body">
+          <span [innerHtml]="modalMessage"></span>
+        </section>
+        <footer class="modal-card-foot">
+          <a class="button is-primary" (click)="actionCloseModal()">OK</a>
+        </footer>
+      </div>
+    </div>
+

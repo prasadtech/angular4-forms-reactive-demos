@@ -1,0 +1,60 @@
+<section class="hero is-fullheight is-default is-bold">
+    <div class="hero-head">
+        <div class="container">
+            <nav class="nav has-shadow">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item" href="http://angular.io" target="_blank">
+                            <img src="./assets/img/angular.png" alt="Angular 2">
+                        </a>
+                    </div>
+                    <span class="nav-toggle">
+              <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                    <div class="nav-right nav-menu">
+                        <a class="nav-item is-tab" routerLinkActive="is-active" routerLink="/home">
+                Home
+            </a>
+                        <a class="nav-item is-tab" routerLinkActive="is-active" routerLink="/module-a">
+                Module A
+            </a>
+                        <a class="nav-item is-tab" routerLinkActive="is-active" routerLink="/module-b">
+                Module B
+            </a>
+                        <a class="nav-item is-tab" routerLinkActive="is-active" routerLink="/module-c">
+                Module C
+            </a>
+                        <span class="nav-item">
+                <a class="button" routerLink="/login">
+                  Log in
+                </a>
+                <!--<a class="button is-info">
+                  Sign up
+                </a>-->
+              </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <router-outlet>
+
+            </router-outlet>
+        </div>
+    </div>
+
+    <div class="hero-foot">
+        <div class="container">
+            <div class="tabs is-centered">
+                <ul>
+                    <li><a> By Narasimha Vuppala</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
