@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" class="form-control" ngModel name="username" required> {{username}}
+            </div>
+            <button class="btn btn-default" type="button" (click)="suggestUserName()">Suggest an Username</button>
+            <div class="form-group">
+                <label for="email">Mail</label>
+                <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+                <span style="color:red" *ngIf=" !email.valid && email.touched ">Please enter a valid email</span>
+            </div>
+        </div>
+        <p style="color:red " *ngIf="!userData.valid && userData.touched ">User Data is invalid</p>
+        <div class="form-group ">
+            <label for="secret ">Secret Questions</label>
+            <select id="secret " class="form-control " [ngModel]="defaultQuestion " name="secret ">
+            <option value="pet ">Your first Pet?</option>
+            <option value="teacher ">Your first teacher?</option>
+          </select>
+        </div>
+        <div class="form-group ">
+            <textarea name="questionAnswer " rows="3 " class="form-control " [(ngModel)]="answer "></textarea>
+        </div>
+        <p>Your reply: {{ answer }}</p>
+        <div class="radio " *ngFor="let gender of genders ">
+            <label>
+            <input type="radio "  name="gender "   ngModel   [value]="gender "  required>
+            {{ gender }}
+          </label>
+        </div>
+        <!--[disabled]="!f.valid "-->
+        <button class="btn btn-primary " type="submit ">Submit</button>
+        <button class="btn btn-primary " type="reset ">Reset</button>
+    </form>
+
+
+    <div class="row ">
+        Model Data : {{user|json}}
+    </div>
+
+    <div class="row ">
+        Form Data : {{f.value|json}}
+    </div>
+
+    <div> sample </div>
+
+
+</div>
